@@ -243,6 +243,17 @@ export function encodeValue(value?: any): string {
 // =========================================
 
 /**
+ * Parse a src destination sequence using > separators eg 1>2>3.
+ */
+ export function parseSrcDestinations(str: string): {src: number, destinations: number[]} {
+    const [src, ...destinations] = str.split(">").map(item => parseInt(item, 10));
+    return {
+        src,
+        destinations
+    };
+}
+
+/**
  * Parse the given string to a float, returning 0 for an empty string.
  */
 export function parseFloatSafe(str: string): number {

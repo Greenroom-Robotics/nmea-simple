@@ -13,6 +13,7 @@ import { decodeSentence as decodeHDM, encodePacket as encodeHDM, HDMPacket } fro
 import { decodeSentence as decodeHDT, encodePacket as encodeHDT, HDTPacket } from "./codecs/HDT";
 import { decodeSentence as decodeMTK, encodePacket as encodeMTK, MTKPacket } from "./codecs/MTK";
 import { decodeSentence as decodeMWV, encodePacket as encodeMWV, MWVPacket } from "./codecs/MWV";
+import { decodeSentence as decodeNIX, NIXPacket } from "./codecs/NIX";
 import { decodeSentence as decodeRDID, RDIDPacket } from "./codecs/RDID";
 import { decodeSentence as decodeRMC, RMCPacket } from "./codecs/RMC";
 import { decodeSentence as decodeVHW, VHWPacket } from "./codecs/VHW";
@@ -23,8 +24,8 @@ import { decodeSentence as decodeZDA, ZDAPacket } from "./codecs/ZDA";
 import { validNmeaChecksum } from "./helpers";
 
 
-export type Packet = APBPacket | BWCPacket | DBTPacket | DTMPacket | GGAPacket | GLLPacket | GNSPacket | GSAPacket | GSTPacket | GSVPacket | HDGPacket | HDMPacket | HDTPacket | MTKPacket | MWVPacket | RDIDPacket | RMCPacket | VHWPacket | VTGPacket | XDRPacket | ZDAPacket;
-export { APBPacket, BWCPacket, DBTPacket, DTMPacket, GGAPacket, GLLPacket, GNSPacket, GSAPacket, GSTPacket, GSVPacket, HDGPacket, HDMPacket, HDTPacket, MTKPacket, MWVPacket, RDIDPacket, RMCPacket, VHWPacket, VTGPacket, XDRPacket, ZDAPacket };
+export type Packet = APBPacket | BWCPacket | DBTPacket | DTMPacket | GGAPacket | GLLPacket | GNSPacket | GSAPacket | GSTPacket | GSVPacket | HDGPacket | HDMPacket | HDTPacket | MTKPacket | MWVPacket | NIXPacket | RDIDPacket | RMCPacket | VHWPacket | VTGPacket | XDRPacket | ZDAPacket;
+export { APBPacket, BWCPacket, DBTPacket, DTMPacket, GGAPacket, GLLPacket, GNSPacket, GSAPacket, GSTPacket, GSVPacket, HDGPacket, HDMPacket, HDTPacket, MTKPacket, MWVPacket, NIXPacket, RDIDPacket, RMCPacket, VHWPacket, VTGPacket, XDRPacket, ZDAPacket };
 
 
 type Decoder = (parts: string[]) => Packet;
@@ -46,6 +47,7 @@ const decoders: { [sentenceId: string]: Decoder } = {
     HDT: decodeHDT,
     MTK: decodeMTK,
     MWV: decodeMWV,
+    NIX: decodeNIX,
     RDID: decodeRDID,
     RMC: decodeRMC,
     VHW: decodeVHW,
