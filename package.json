@@ -1,7 +1,7 @@
 {
-  "name": "nmea-simple",
-  "version": "3.2.0",
-  "homepage": "https://github.com/101100/nmea-simple",
+  "name": "@greenroom-robotics/nmea-simple",
+  "version": "3.3.0",
+  "homepage": "https://github.com/Greenroom-Robotics/nmea-simple",
   "description": "NMEA 0183 sentence parser and encoder",
   "author": {
     "name": "Jason Heard",
@@ -20,10 +20,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/101100/nmea-simple"
+    "url": "https://github.com/Greenroom-Robotics/nmea-simple"
   },
   "bugs": {
-    "url": "https://github.com/101100/nmea-simple/issues"
+    "url": "https://github.com/Greenroom-Robotics/nmea-simple/issues"
   },
   "scripts": {
     "build": "npm run lint && tsc",
