@@ -27,4 +27,12 @@ describe("DBT", (): void => {
     sentence.should.equal("$IIDBT,36.41,f,11.10,M,5.99,F*25");
   });
 
+  it("parser works with feet and fathoms missing", (): void => {
+    const packet = parseNmeaSentence("$SDDBT,,f,140.4535,M,,F*34");
+    packet.should.have.property("sentenceId", "DBT");
+    packet.should.have.property("sentenceName", "Depth below transducer");
+    packet.should.have.property("talkerId", "SD");
+    packet.should.have.property("depthMeters", 140.4535);
+  });
+
 });
