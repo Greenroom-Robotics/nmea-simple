@@ -1,6 +1,6 @@
 {
   "name": "@greenroom-robotics/nmea-simple",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "homepage": "https://github.com/Greenroom-Robotics/nmea-simple",
   "description": "NMEA 0183 sentence parser and encoder",
   "author": {
